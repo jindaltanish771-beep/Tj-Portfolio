@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* CSS Document */
+/* --- GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- VARIABLES --- */
+:root {
+    --bg-dark: #0b0b0b;
+    --bg-light: #1a1a1a;
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    margin-top: 1px;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* --- BUTTONS --- */
+.btn-neon {
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 10px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-neon::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 0%; height: 100%;
+    background: var(--neon-blue);
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.btn-neon:hover::before {
+    width: 100%;
+}
+
+.btn-neon:hover {
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background: rgba(11, 11, 11, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white) !important;
+}
+
+.nav-link {
+    color: var(--text-white) !important;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--neon-blue) !important;
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* --- SECTIONS --- */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252b638?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Placeholder BG */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+/* --- CARDS (Glassmorphism) --- */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.4s;
+    height: 100%;
+}
+ 
+.glass-card h1 {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: 0.4s;
+    height: 100%;
+    margin-right: 10px;
+    margin-bottom: 79px;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+}
+
+.glass-card h4 {
+    color: var(--neon-blue);
+    margin-bottom: 15px;
+}
+
+/* --- SKILLS --- */
+.progress-bar {
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* --- PORTFOLIO TABS --- */
+.portfolio-menu {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.portfolio-menu button {
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding-bottom: 5px;
+}
+
+.portfolio-menu button.active, .portfolio-menu button:hover {
+    color: var(--neon-blue);
+    border-bottom: 2px solid var(--neon-blue);
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* --- CONTACT FORM --- */
+.form-control {
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    background: var(--glass);
+    border-color: var(--neon-blue);
+    box-shadow: none;
+    color: white;
+    margin-top: 70px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--bg-light);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 545px;
+}
+
+
+.social-icons{
+    display: flex;
+    gap: 50px;  
+    align-items: center;
+}
